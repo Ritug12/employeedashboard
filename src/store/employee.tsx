@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { configureStore, createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { configure } from "@testing-library/react";
 
 // // const employeeState = {dataAdded:false}
@@ -22,8 +22,9 @@ import { configure } from "@testing-library/react";
 
 
 interface FormData {
-    id: string;
-    name: string;
+  id: number;
+  name: string;
+  empid: string;
   }
   
   interface FormState {
@@ -33,18 +34,27 @@ interface FormData {
   const initialState: FormState = {
     formData: []
   };
+
+  let nextId = 1;
   
   const formSlice = createSlice({
     name: 'form',
     initialState,
     reducers: {
-      addFormData: (state, action) => {
+      addFormData: (state, action:PayloadAction<any>) => {
+        action.payload.id = nextId++;
         state.formData.push(action.payload);
-      }
-    }
+      },
+      deleteRow: (state, action) => {
+        const id = action.payload;
+        state.formData = state.formData.filter((row:any) => row.uid !== id);
+      },
+      
+    },
+    
   });
   
-  export const { addFormData } = formSlice.actions;
+  export const { addFormData, deleteRow } = formSlice.actions;
   
   
 
