@@ -2,10 +2,7 @@ import { TableContainer, Button, TextField } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import DeleteIcon from '@mui/icons-material/Delete';
 import EditIcon from '@mui/icons-material/Edit';
-import { TableBody, Table } from '@mui/material';
-import TableCell from '@mui/material/TableCell';
-import TableHead from '@mui/material/TableHead';
-import TableRow from '@mui/material/TableRow';
+import { TableBody, Table, TableCell, TableHead,TableRow } from '@mui/material';
 import React, { useState } from 'react';
 import Dialog from '@mui/material/Dialog';
 import DialogActions from '@mui/material/DialogActions';
@@ -13,7 +10,6 @@ import DialogContent from '@mui/material/DialogContent';
 import DialogTitle from '@mui/material/DialogTitle';
 import { deleteRow } from "../store/employee";
 import { useDispatch, useSelector } from 'react-redux';
-// import RootState from '../store/employee'
 import './AddEmp.css'
 import Search from './Search';
 import SaveEmployee from './SaveEmployee';
