@@ -49,9 +49,7 @@ interface FormData {
         const id = action.payload;
         state.formData = state.formData.filter((row:any) => row.uid !== id);
       },
-      
     },
-    
   });
   
   export const { addFormData, deleteRow } = formSlice.actions;

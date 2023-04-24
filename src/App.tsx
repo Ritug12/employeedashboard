@@ -9,9 +9,9 @@ function App() {
 
   const [showTable, setShowTable] = useState(false);
 
-  const handleAdd = () => {
-    setShowTable(true);
-  };
+  // const handleAdd = () => {
+  //   setShowTable(true);
+  // };
 
   const handleBack = () => {
     setShowTable(false);
@@ -20,10 +20,10 @@ function App() {
   // const addEmployee = useSelector((state:any)=>state.employee.dataAdded);
   return (
     <div className="App">
-  
+      <EmployeeTable />
       {/* <AddEmp /> */}
-      {!showTable ? (<SaveEmployee onAdd={handleAdd} />):
-      (<EmployeeTable onBack={handleBack}/>) }
+      {/* {!showTable ? (<SaveEmployee/>):
+      (<EmployeeTable onBack={handleBack}/>) }  */}
     </div>
   );
 }
